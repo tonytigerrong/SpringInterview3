@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Models" />
+        <module name="Presistence" />
+        <module name="Web-UI" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Models" target="1.8" />
+      <module name="Presistence" target="1.8" />
+      <module name="spring-interview" target="1.8" />
+      <module name="Web-UI" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Models" options="-parameters" />
+      <module name="Presistence" options="-parameters" />
+      <module name="Web-UI" options="-parameters" />
+      <module name="spring-interview" options="-parameters" />
+    </option>
+  </component>
+</project>
