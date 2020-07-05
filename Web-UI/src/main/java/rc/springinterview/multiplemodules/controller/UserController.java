@@ -22,4 +22,13 @@ public class UserController {
         List<User> users = this.userRepo.findAll();
         return users;
     }
+
+    @GetMapping(value = "/")
+    public String home(){
+        return "Hello, Anyone can see this!";
+    }
+    @GetMapping(value = "/private")
+    public String privateArea(){
+        return "Only private access can see this!";
+    }
 }

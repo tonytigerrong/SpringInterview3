@@ -3,6 +3,7 @@ package rc.springinterview.multiplemodules.presistence;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import rc.springinterview.multiplemodules.models.Role;
 import rc.springinterview.multiplemodules.models.User;
 
 import java.util.ArrayList;
@@ -17,10 +18,20 @@ public class DbSeeder implements CommandLineRunner {
     }
 
     public void run(String... args) throws Exception {
-        User user1 = new User(); user1.setAge(11); user1.setFirstName("firstname1"); user1.setLastName("lastname1");
-        User user2 = new User(); user2.setAge(12); user2.setFirstName("firstname2"); user2.setLastName("lastname2");
+        Role role1 = new Role("ROLE1");
+        Role role2 = new Role("ROLE2");
+        List<Role> roles = new ArrayList<>();
+        roles.add(role1); roles.add(role2);
+        User user1 = new User();
+        user1.setUsername("username1"); user1.setPassword("password1");
+        user1.setRoles(roles);
+        User user2 = new User();
+        user2.setUsername("username2"); user2.setPassword("password2");
+        user2.setRoles(roles);
         List<User> users = new ArrayList<>();
         users.add(user1); users.add(user2);
+//        role1.setUsers(users);
+//        role2.setUsers(users);
         this.userRepo.saveAll(users);
     }
 }
