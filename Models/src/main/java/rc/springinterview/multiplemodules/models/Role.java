@@ -1,5 +1,7 @@
 package rc.springinterview.multiplemodules.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,7 +12,8 @@ public class Role {
     @GeneratedValue
     private Long id;
     private String name;
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "roles")
+    @JsonIgnore
     private List<User> users;
     public List<User> getUsers() {
         return users;

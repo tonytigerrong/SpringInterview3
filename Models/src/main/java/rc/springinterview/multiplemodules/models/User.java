@@ -12,7 +12,7 @@ public class User {
     private String username;
     private String password;
     //@OneToMany(cascade=CascadeType.ALL)
-    @ManyToMany(cascade=CascadeType.ALL)
+    @ManyToMany(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
     @JoinTable(
             name = "user_role",
             joinColumns = @JoinColumn(name="user_id"),
